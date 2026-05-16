@@ -46,7 +46,7 @@ public class AddCommandTests
         var handler = AddCommandHandler.Item.Create(_serviceProvider);
 
         // Act
-        var result = await handler(subject, listName, true);
+        var result = await handler(subject, listName, true, null);
 
         // Assert
         Assert.Equal(0, result);
@@ -104,7 +104,7 @@ public class AddCommandTests
         var handler = AddCommandHandler.Item.Create(_serviceProvider);
 
         // Act
-        var result = await handler(subject, listName, false);
+        var result = await handler(subject, listName, false, null);
 
         // Assert
         Assert.Equal(0, result);
@@ -128,7 +128,7 @@ public class AddCommandTests
         var handler = AddCommandHandler.Item.Create(_serviceProvider);
 
         // Act
-        var result = await handler(subject, listName, false);
+        var result = await handler(subject, listName, false, null);
 
         // Assert
         Assert.Equal(1, result);
@@ -151,7 +151,7 @@ public class AddCommandTests
         var handler = AddCommandHandler.Item.Create(_serviceProvider);
 
         // Act
-        var result = await handler(subject, null, false);
+        var result = await handler(subject, null, false, null);
 
         // Assert
         Assert.Equal(0, result);
@@ -174,7 +174,7 @@ public class AddCommandTests
         var handler = AddCommandHandler.Item.Create(_serviceProvider);
 
         // Act
-        var result = await handler(subject, null, false);
+        var result = await handler(subject, null, false, null);
 
         // Assert
         Assert.Equal(1, result);
@@ -191,7 +191,7 @@ public class AddCommandTests
         var handler = AddCommandHandler.Item.Create(_serviceProvider);
 
         // Act
-        var result = await handler(string.Empty, listName, false);
+        var result = await handler(string.Empty, listName, false, null);
 
         // Assert
         Assert.Equal(1, result);
